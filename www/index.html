@@ -6,6 +6,7 @@
   -->
 
     <head>
+        <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/af.ui.min.css">
         <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/icons.min.css">
@@ -71,6 +72,27 @@
         <script type="application/javascript" src="app_framework/2.1/appframework.ui.js" data-ver="1"></script>
         <script type="application/javascript" src="js/index_user_scripts.js"></script>
         <script type="application/javascript" src="app_framework/pageChangeRepeater.js"></script>
+		<style type="text/css">
+		
+			#playcontrols {
+				text-align: center;
+				margin-top: 50px;
+			}
+			#playcontrols #activityindicator, #playcontrols #stopbutton {
+				display: none;
+			}
+			
+			#textpositiondiv {
+				margin-top: 100px;
+			}
+		
+		</style>        
+			  <script type="text/javascript">
+				  playButton = document.getElementById('playbutton');
+				  stopButton = document.getElementById('stopbutton');
+				  activityIndicator = document.getElementById('activityindicator');
+				  textPosition = document.getElementById('textposition');
+			  </script>
     </head>
 
     <body id="afui">
@@ -93,7 +115,7 @@
             <h1>jkjjkj</h1>
         </header>
         <header class="wrapping-col wrap-element uib_w_8" data-uib="app_framework/header" data-ver="2" id="af-header-4">
-            <h1>Title</h1>
+            <h1>RadioLand</h1>
             <a class="button widget uib_w_10 header-right d-margins icon info" data-uib="app_framework/button" data-ver="1" href="#uib_page_1" data-transition="flip"></a>
         </header>
         <header class="wrapping-col wrap-element uib_w_9" data-uib="app_framework/header" data-ver="2" id="af-header-5">
@@ -104,15 +126,19 @@
             <div class="upage vertical-col panel" id="mainpage" data-header="af-header-4" data-footer="none">
                 <div class="grid grid-pad urow uib_row_1 row-height-1" data-uib="layout/row" data-ver="0">
                     <div class="col uib_col_1 col-0_12-12" data-uib="layout/col" data-ver="0">
-                        <div class="widget-container content-area vertical-col">
+                        <div class="widget-container content-area vertical-col center">
 
-                            <div class="widget uib_w_3 d-margins" data-uib="media/text" data-ver="0">
-                                <div class="widget-container left-receptacle"></div>
-                                <div class="widget-container right-receptacle"></div>
-                                <div>
-                                    <p>This is a Flip View App template main page.</p>
-                                </div>
-                            </div><span class="uib_shim"></span>
+                            <div class="widget uib_w_15 scale-image d-margins" data-uib="media/img" data-ver="0">
+                                <figure class="figure-align">
+                                    <img src="img/logo-radio.png">
+                                    <figcaption data-position="bottom"></figcaption>
+                                </figure>
+                            </div>
+                            <div id="playcontrols">
+                              <a href="#" id="playbutton" onClick="html5audio.play();return false;"><img src="img/playbutton.png" /></a>
+                              <a href="#" id="activityindicator" onClick="html5audio.stop();return false;"><img src="img/activityindicator.gif" /></a>
+                              <a href="#" id="stopbutton" onClick="html5audio.stop();return false;"><img src="img/stopbutton.png" /></a>
+			                 </div>
                         </div>
                     </div>
                     <span class="uib_shim"></span>
